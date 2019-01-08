@@ -48,19 +48,19 @@
 
     <!-- Run the JUnit Tests -->
     <!-- Output is XML, could also be plain-->
-    <!--<target name="junit" depends="compile">
+    <target name="junit" depends="compile">
         <junit printsummary="on">
             <classpath refid="junit.class.path" />
-            <formatter type="xml" />-->
-        	<!--<test name="tests.TestsValidator" todir="${test.report.dir}"/>
+            <formatter type="xml" />
+        	<!--<test name="tests.TestsValidator" todir="${test.report.dir}"/>-->
             <batchtest todir="${test.report.dir}">
                 <fileset dir="${src.dir}">
                     <include name="**/*Test*.java"/>
                 </fileset>
             </batchtest>
         </junit>
-    </target>-->
-	<!--<target name="junitreport" depends="junit">
+    </target>
+	<target name="junitreport" depends="junit">
         <junitreport todir="${test.report.dir}">
             <fileset dir="${test.report.dir}">
                 <include name="Test*.xml"/>
@@ -68,8 +68,7 @@
             <report format="frames" todir="${test.report.dir}"/>
         </junitreport>
 	 </target> 
-	-->
-    <target name="main" depends="compile">
+    <target name="main" depends="compile, junit, junitreport">
         <description>Main target</description>
     </target>
 
