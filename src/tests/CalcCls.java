@@ -3,8 +3,7 @@ package tests;
 public class CalcCls {
 	public int Sum(int i, int j)
 	{
-		int res= i  + j;
-		return res;
+		return i+j;
 	}
 	public int Subt(int i, int j)
 	{
